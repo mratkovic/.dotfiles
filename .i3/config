@@ -40,8 +40,8 @@ bindsym $mod+d exec dmenu_run
 # installed.
 # bindsym $mod+space exec --no-startup-id i3-dmenu-desktop
 # bindsym $mod+space exec --no-startup-id j4-dmenu-desktop
-bindsym $mod+space exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i"
-
+#bindsym $mod+space exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i"
+bindsym $mod+space exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu -hide-scrollbar'
 
 # change focus - VIM
 #bindsym $mod+j focus left
@@ -240,6 +240,43 @@ mode "kill" {
 }
 bindsym $mod+q mode "kill"
 
+set $mode_power power (l)ock (e)xit (s)uspend (r)eboot (p)oweroff
+mode "$mode_power" {
+    bindsym l mode "default", exec --no-startup-id i3lock -c 000000
+    bindsym e mode "default", exec --no-startup-id i3-msg exit
+    bindsym s mode "default", exec --no-startup-id systemctl suspend
+    bindsym r mode "default", exec --no-startup-id systemctl reboot
+    bindsym p mode "default", exec --no-startup-id systemctl poweroff
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Control+p mode "$mode_power"
+
+
+mode "volume (Up/Down)" {
+        bindsym Down exec amixer set Master 5%-
+        bindsym Up exec amixer set Master 5%+
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+Control+v mode "volume (Up/Down)"
+
+mode "backlight (Up/Down)" {
+        # brightness control (Alt + F4 or Alt + F5)
+        bindsym Down exec xbacklight - 10
+        bindsym Up exec xbacklight + 10
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+Control+b mode "backlight (Up/Down)"
+
+
+
 
 
 # title colors
@@ -247,7 +284,7 @@ bindsym $mod+q mode "kill"
 client.focused          #203142 #203142 #ffffff #2e9ef4
 client.focused_inactive #333333 #2C3944 #ffffff #484e50
 client.unfocused        #333333 #222222 #888888 #292d2e
-client.urgent           #2f343a #900000 #ffffff #900000
+client.urgent           #2F343A #900000 #ffffff #900000
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -277,6 +314,7 @@ bar {
 # volume control (Alt + F11 or Alt + F12)
 bindcode $mod+95 exec amixer set Master 5%-
 bindcode $mod+96 exec amixer set Master 5%+
+bindcode $mod+121 exec /home/marko/local/scripts/mute.sh
 
 # brightness control (Alt + F4 or Alt + F5)
 bindcode $mod+70 exec xbacklight - 10
@@ -313,17 +351,21 @@ for_window [class="Xfce4-notifyd"] floating enable, border normal #none
 for_window [class="(?i)xfce4-terminal"] border pixel 1
 for_window [class="(?i)gvim"] border pixel 1
 
+
+# move to specific workspace
+#for_window [instance="skype"] move container to workspace number 9
+
 # hide window borders
 hide_edge_borders both
 
 # rename workspace, mod comma
-bindcode $mod+59 exec --no-startup-id ~/.i3/scripts/rename_workspace
+bindcode $mod+59 exec  ~/.i3/scripts/rename_workspace.sh
 
 # move workscapre to other display
-bindsym $mod+Tab  exec --no-startup-id ~/.i3/scripts/move_workspace_display.py
+bindsym $mod+Tab  exec ~/.i3/scripts/move_workspace_display.py
 
 # toggle layout
-bindsym $mod+n exec toggle_layout
+bindsym $mod+l exec /home/marko/local/scripts/toggle_layout.sh
 
 # Hide scrollbar
 #hide_edge_borders both
@@ -334,11 +376,16 @@ bindsym $mod+n exec toggle_layout
 ############################################################################
 
 exec --no-startup-id nm-applet
-exec --no-startup-id gnome-settings-daemon
+exec --no-startup-id  gnome-settings-daemon
 exec dropbox start
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id clipit
-exec --no-startup-id redshift-gtk
+exec --no-startup-id compton -CGb --backend glx --vsync opengl
+
+# bell off
+exec --no-startup-id xset -b
+#exec --no-startup-id clipit
+#exec --no-startup-id redshift-gtk
 # Set wallpapaper - feh or tool called nitrogen
 #exec --no-startup-id nitrogen --restore
-exec --no-startup-id feh --bg-scale /home/marko/Pictures/floor-blue_00241491.jpg  --bg-scale /home/marko/Pictures/floor-blue_00241491.jpg
+exec --no-startup-id feh --bg-scale /home/marko/Pictures/wall/ele_w_1920.jp --bg-scale /home/marko/Pictures/wall/ele_w_1920.jpg
+
