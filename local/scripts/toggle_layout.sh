@@ -18,5 +18,5 @@ done
 next_id=$(((curr_id + 1) % N))
 next_lang=${LANGS[$next_id]}
 echo "Next layout: $next_lang"
-
+notify-send -t 1000 "Layout: $next_lang"
 setxkbmap $next_lang

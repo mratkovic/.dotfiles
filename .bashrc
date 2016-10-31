@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000000
-HISTFILESIZE=2000000
+HISTSIZE=-1
+HISTFILESIZE=-1
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -94,15 +94,6 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -122,3 +113,35 @@ TERM=screen-256color
 
 # Map capslock to escape
 setxkbmap -option caps:escape
+
+
+# Alias definitions.
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# IP definitions
+if [ -f ~/.external_ips ]; then
+    . ~/.external_ips
+fi
+
+# bell off
+if [ -n "$DISPLAY" ]; then
+  xset b off
+fi
+
+
+### PATHS
+
+# java
+JAVA_HOME=/home/marko/local/java/jdk1.8.0_102/
+JRE_HOME=${JAVA_HOME}/jre/
+M2_HOME=/home/marko/local/tools/apache-maven-3.3.9
+PATH=${PATH}:${M2_HOME}/bin
+
+export JAVA_HOME
+export JRE_HOME
+export M2_HOME
+
+export PATH
+

@@ -151,10 +151,6 @@ workspace_auto_back_and_forth yes
 bindsym $mod+Ctrl+Right workspace next_on_output
 bindsym $mod+Ctrl+Left workspace prev_on_output
 
-#monitors
-bindsym $mod+x    exec xrandr --output HDMI1 --off
-bindsym $mod+Control+x    exec xrandr --output HDMI1 --auto --right-of LVDS1
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -229,6 +225,20 @@ mode "move_to" {
 }
 bindsym $mod+m mode "move_to"
 
+# external display
+
+mode "HDMI (Left-Right-(O)ff" {
+    bindsym Right exec xrandr --output HDMI1 --right-of LVDS1 --auto
+    bindsym Left exec xrandr --output HDMI1 --left-of LVDS1 --auto
+    bindsym o exec xrandr --output HDMI1 --off
+    bindsym q exec xrandr --output HDMI1 --off
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Control+d mode "HDMI (Left-Right-(O)ff"
+
+
 # kill windows
 mode "kill" {
         bindsym q kill
@@ -251,8 +261,8 @@ mode "$mode_power" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+Control+p mode "$mode_power"
 
+bindsym $mod+Control+p mode "$mode_power"
 
 mode "volume (Up/Down)" {
         bindsym Down exec amixer set Master 5%-

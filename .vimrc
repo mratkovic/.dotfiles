@@ -2,6 +2,7 @@
 
 set tabstop=4
 set shiftwidth=4
+set expandtab
 :let mapleader = "\\"
 
 " show trailing whitespaces as error
@@ -31,42 +32,42 @@ vmap  <expr>  D        DVB_Duplicate()
 "======================= VUNDLE ===============================================
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'dag/vim2hs'
-Bundle 'bling/vim-airline'
-Bundle 'jordwalke/flatlandia'
-Plugin 'morhetz/gruvbox'
-Plugin 'chriskempson/base16-vim'
-Plugin 'itchyny/lightline.vim'
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_autoclose_preview_window_after_completion =1
-
-"Syntastics
-
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
-
-let g:syntastic_cpp_compiler_options = ' -std=c++11'
-
-
-let g:haskell_conceal              = 0
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
+"
+" " let Vundle manage Vundle, required
+" Plugin 'gmarik/Vundle.vim'
+" Plugin 'Valloric/YouCompleteMe'
+" Plugin 'octol/vim-cpp-enhanced-highlight'
+" Plugin 'dag/vim2hs'
+" Bundle 'bling/vim-airline'
+" Bundle 'jordwalke/flatlandia'
+" Plugin 'morhetz/gruvbox'
+" Plugin 'chriskempson/base16-vim'
+" Plugin 'itchyny/lightline.vim'
+" " All of your Plugins must be added before the following line
+" call vundle#end()            " required
+"
+" let g:ycm_autoclose_preview_window_after_insertion = 1
+" let g:ycm_autoclose_preview_window_after_completion =1
+"
+" "Syntastics
+"
+" "set statusline+=%#warningmsg#
+" "set statusline+=%{SyntasticStatuslineFlag()}
+" "set statusline+=%*
+"
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+"
+" let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+"
+" let g:syntastic_cpp_compiler_options = ' -std=c++11'
+"
+"
+" let g:haskell_conceal              = 0
 
 "let g:lightline = {
 "      \ 'colorscheme': 'wombat',
@@ -79,11 +80,6 @@ let g:haskell_conceal              = 0
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 " On write clear whitespaces
 autocmd BufWritePre * :%s/\s\+$//e
-
-" Trims trailing White Spaces
-function! TrimWS()
-     %s/\s\+$//e
-endfunction
 
 
 " Access nolors present in 256 colorspace
