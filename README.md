@@ -8,5 +8,6 @@ My dotfiles and various util scripts
 * i3 settings and additional scripts
 
 ## Instalation
-TODO - add install script
-
+Running `./install.sh` creates symlinks to config files in ~/dotfiles dir.
+Backup of existing files is created in ~/dotfiles_old directory.
+For more information and customization check install.sh script.
