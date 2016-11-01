@@ -16,6 +16,8 @@ alias fn='sudo ${SCRIPTS_DIR}/fn_k400.py'
 alias bat='sudo tlp bat'
 alias qq='exit'
 alias :q='exit'
+alias caps='xdotool key Caps_Lock'
+alias CAPS='caps'
 
 # APT aliases
 alias install='sudo apt-get install'
