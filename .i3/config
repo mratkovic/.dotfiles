@@ -384,13 +384,13 @@ bindsym $mod+l exec /home/marko/local/scripts/toggle_layout.sh
 ############################################################################
 # Startup
 ############################################################################
-
 exec --no-startup-id nm-applet
 exec --no-startup-id  gnome-settings-daemon
 exec dropbox start
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id compton -CGb --backend glx --vsync opengl
-
+#exec --no-startup-id redshift
+exec --no-startup-id redshift-gtk
 # bell off
 exec --no-startup-id xset -b
 #exec --no-startup-id clipit

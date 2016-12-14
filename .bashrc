@@ -134,14 +134,19 @@ fi
 ### PATHS
 
 # java
-JAVA_HOME=/home/marko/local/java/jdk1.8.0_102/
-JRE_HOME=${JAVA_HOME}/jre/
-M2_HOME=/home/marko/local/tools/apache-maven-3.3.9
-PATH=${PATH}:${M2_HOME}/bin
+export JAVA_HOME=/home/marko/local/java/jdk1.8.0_102/
+export JRE_HOME=${JAVA_HOME}/jre/
+export M2_HOME=/home/marko/local/tools/apache-maven-3.3.9
+export PATH=${PATH}:${M2_HOME}/bin
 
-export JAVA_HOME
-export JRE_HOME
-export M2_HOME
+
+# Virtualenv wrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/.envs_devel
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
+source /usr/local/bin/virtualenvwrapper.sh
+
+
 
 export PATH
 

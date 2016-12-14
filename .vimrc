@@ -35,7 +35,7 @@ function! ToggleNumbers()
     set nu!
 endfunc
 
-nnoremap <C-r> :call ToggleNumbersStyle()<cr>
+" nnoremap <C-r> :call ToggleNumbersStyle()<cr>
 nnoremap <C-n> :call ToggleNumbers()<cr>
 
 " ==================== MISC ===================================================
