@@ -19,7 +19,7 @@ alias :q='exit'
 alias caps='xdotool key Caps_Lock'
 alias CAPS='caps'
 alias subs='subliminal download -l en'
-
+alias clip='xclip -selection clipboard'
 
 # APT aliases
 alias install='sudo apt-get install'

@@ -227,7 +227,7 @@ bindsym $mod+m mode "move_to"
 
 # external display
 
-mode "HDMI (Left-Right-(O)ff" {
+mode "HDMI Left-Right-(O)ff" {
     bindsym Right exec xrandr --output HDMI1 --right-of LVDS1 --auto
     bindsym Left exec xrandr --output HDMI1 --left-of LVDS1 --auto
     bindsym o exec xrandr --output HDMI1 --off
@@ -236,7 +236,7 @@ mode "HDMI (Left-Right-(O)ff" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+Control+d mode "HDMI (Left-Right-(O)ff"
+bindsym $mod+Control+d mode "HDMI Left-Right-(O)ff"
 
 
 # kill windows
@@ -250,29 +250,28 @@ mode "kill" {
 }
 bindsym $mod+q mode "kill"
 
-set $mode_power power (l)ock (e)xit (s)uspend (r)eboot (p)oweroff
+set $mode_power power (l)ock (e)xit (s)uspend (r)eboot (p)oweroff )
 mode "$mode_power" {
     bindsym l mode "default", exec --no-startup-id i3lock -c 000000
     bindsym e mode "default", exec --no-startup-id i3-msg exit
     bindsym s mode "default", exec --no-startup-id systemctl suspend
     bindsym r mode "default", exec --no-startup-id systemctl reboot
     bindsym p mode "default", exec --no-startup-id systemctl poweroff
-
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 
 bindsym $mod+Control+p mode "$mode_power"
 
-mode "volume (Up/Down)" {
+mode "volume (Up/Down) (m)ute" {
         bindsym Down exec amixer set Master 5%-
         bindsym Up exec amixer set Master 5%+
-
+        bindsym m exec ~/local/scripts/mute.sh
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-bindsym $mod+Control+v mode "volume (Up/Down)"
+bindsym $mod+Control+v mode "volume (Up/Down) (m)ute"
 
 mode "backlight (Up/Down)" {
         # brightness control (Alt + F4 or Alt + F5)
