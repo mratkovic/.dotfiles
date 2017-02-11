@@ -367,6 +367,10 @@ for_window [class="(?i)gvim"] border pixel 1
 # hide window borders
 hide_edge_borders both
 
+# screenshot
+bindsym $mod+Print exec scrot ~/Pictures/scrot_ss/%Y-%m-%d-%T-screenshot.png
+
+
 # rename workspace, mod comma
 bindcode $mod+59 exec  ~/.i3/scripts/rename_workspace.sh
 

@@ -21,6 +21,8 @@ alias CAPS='caps'
 alias subs='subliminal download -l en'
 alias clip='xclip -selection clipboard'
 
+alias myscrot='scrot ~/Pictures/scrot_ss/%Y-%m-%d-%T-screenshot.png'
+
 # APT aliases
 alias install='sudo apt-get install'
 alias remove='sudo apt-get remove'
