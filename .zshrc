@@ -8,7 +8,7 @@ fi
 # History options
 HISTSIZE=10000000                   # The maximum number of events to save in the internal history.
 SAVEHIST=10000000                   # The maximum number of events to save in the history file.
-unsetopt HIST_VERIFY               # Do not execute immediately upon history expansion.
+unsetopt HIST_VERIFY                # Do not execute immediately upon history expansion.
 
 # autocomplete - single group
 zstyle ':completion:*:*:*:*:*' menu select
