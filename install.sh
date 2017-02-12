@@ -7,7 +7,7 @@ dir=~/dotfiles
 olddir=~/dotfiles_old
 
 # list of files/folders to symlink in homedir
-files=".bashrc .bash_aliases .bashenv .i3 .vim .vimrc .tmux.conf"
+files=".bashrc .bash_aliases .bashenv .i3 .vim .vimrc .tmux.conf .zshrc .zpreztorc"
 
 
 ######### Installation

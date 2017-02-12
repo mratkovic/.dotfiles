@@ -1,5 +1,11 @@
 # Additional aliases for user
 
+# default bash
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+
 # Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
