@@ -11,7 +11,6 @@ export PATH=${PATH}:${M2_HOME}/bin
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/.envs_devel
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
-source /usr/local/bin/virtualenvwrapper.sh
 
 export PATH
 

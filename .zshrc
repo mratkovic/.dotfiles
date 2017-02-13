@@ -30,3 +30,5 @@ if [ -f ~/.bashenv ]; then
     source ~/.bashenv
 fi
 
+source /usr/local/bin/virtualenvwrapper.sh
+

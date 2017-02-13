@@ -1,7 +1,15 @@
 prompt_marko_precmd() {
   # Format PWD.
-  _prompt_marko_pwd=$(promptpwd)
+  #_prompt_marko_pwd=$(promptpwd)
   # _prompt_marko_pwd="${PWD/#$HOME/~}"
+  local pwd="${PWD/#$HOME/~}"
+
+  if [[ "$pwd" == (#m)[/~] ]]; then
+    _prompt_marko_pwd="$MATCH"
+    unset MATCH
+  else
+    _prompt_marko_pwd="${${${${(@j:/:M)${(@s:/:)pwd}##.#?}:h}%/}//\%/%%}/${${pwd:t}//\%/%%}"
+  fi
 
   # Get Git repository information.
   if (( $+functions[git-info] )); then
