@@ -13,4 +13,3 @@ export PROJECT_HOME=$HOME/.envs_devel
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
 
 export PATH
-

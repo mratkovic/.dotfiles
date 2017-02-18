@@ -1,5 +1,5 @@
 "set nocompatible              " be iMproved, required
-
+set term=screen-256color
 
 " ======================= Spaces & Tabs =======================================
 set tabstop=4           " 4 space tab

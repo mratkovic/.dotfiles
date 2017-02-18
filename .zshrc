@@ -13,7 +13,8 @@ unsetopt HIST_VERIFY                # Do not execute immediately upon history ex
 # autocomplete - single group
 zstyle ':completion:*:*:*:*:*' menu select
 
-
+# ctrl r backsearch
+bindkey "^R" history-incremental-search-backward
 # bash stuff
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then

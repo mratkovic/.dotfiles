@@ -5,7 +5,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-
+alias tmux='tmux -2'
 # Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
@@ -25,7 +25,9 @@ alias :q='exit'
 alias caps='xdotool key Caps_Lock'
 alias CAPS='caps'
 alias subs='subliminal download -l en'
-alias clip='xclip -selection clipboard'
+
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
 
 alias myscrot='scrot ~/Pictures/scrot_ss/%Y-%m-%d-%T-screenshot.png'
 

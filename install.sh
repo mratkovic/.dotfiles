@@ -26,4 +26,8 @@ for file in $files; do
     echo "Creating symlink to $file in home directory ..."
     ln -s $dir/$file ~/$file
 done
+
+echo "Terminal colors..."
+ln -s ~/dotfiles/terminalrc ~/.config/xfce4/terminal/terminalrc
+
 echo "Completed!"
