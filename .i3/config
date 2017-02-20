@@ -41,7 +41,9 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+space exec --no-startup-id i3-dmenu-desktop
 # bindsym $mod+space exec --no-startup-id j4-dmenu-desktop
 #bindsym $mod+space exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i"
-bindsym $mod+space exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu -hide-scrollbar'
+#bindsym $mod+space exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu -hide-scrollbar'
+bindsym $mod+space exec --no-startup-id "rofi -combi-modi window,drun -show combi -modi combi"
+
 
 # change focus - VIM
 #bindsym $mod+j focus left
@@ -148,8 +150,10 @@ bindsym $mod+Shift+Control+0 move container to workspace number 20
 workspace_auto_back_and_forth yes
 
 #next and prev
-bindsym $mod+Ctrl+Right workspace next_on_output
 bindsym $mod+Ctrl+Left workspace prev_on_output
+bindsym $mod+Ctrl+Right workspace next_on_output
+bindsym $mod+Tab workspace next_on_output
+bindsym Ctrl+Tab workspace next_on_output
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -216,7 +220,6 @@ mode "move_to" {
         bindsym Left  exec --no-startup-id ~/.i3/scripts/move_workspace_display.py
         bindsym Right  exec --no-startup-id ~/.i3/scripts/move_workspace_display.py
         bindsym m  exec --no-startup-id ~/.i3/scripts/move_workspace_display.py
-        bindsym Tab  exec --no-startup-id ~/.i3/scripts/move_workspace_display.py
 
 
          # back to normal: Enter or Escape
@@ -228,10 +231,10 @@ bindsym $mod+m mode "move_to"
 # external display
 
 mode "HDMI Left-Right-(O)ff" {
-    bindsym Right exec xrandr --output HDMI1 --right-of LVDS1 --auto
-    bindsym Left exec xrandr --output HDMI1 --left-of LVDS1 --auto
-    bindsym o exec xrandr --output HDMI1 --off
-    bindsym q exec xrandr --output HDMI1 --off
+    bindsym Right exec bash -c "xrandr --output HDMI1 --right-of LVDS1 --auto"
+    bindsym Left exec bash -c "xrandr --output HDMI1 --left-of LVDS1 --auto"
+    bindsym o exec bash -c "xrandr --output HDMI1 --off"
+    bindsym q exec bash -c "xrandr --output HDMI1 --off"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -375,7 +378,7 @@ bindsym $mod+Print exec scrot ~/Pictures/scrot_ss/%Y-%m-%d-%T-screenshot.png
 bindcode $mod+59 exec  ~/.i3/scripts/rename_workspace.sh
 
 # move workscapre to other display
-bindsym $mod+Tab  exec ~/.i3/scripts/move_workspace_display.py
+# bindsym $mod+Tab  exec ~/.i3/scripts/move_workspace_display.py
 
 # toggle layout
 bindsym $mod+l exec /home/marko/local/scripts/toggle_layout.sh

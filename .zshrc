@@ -31,5 +31,9 @@ if [ -f ~/.bashenv ]; then
     source ~/.bashenv
 fi
 
+# Map capslock to escape
+setxkbmap -option caps:escape
+
+
 source /usr/local/bin/virtualenvwrapper.sh
 
