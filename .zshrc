@@ -34,6 +34,8 @@ fi
 # Map capslock to escape
 setxkbmap -option caps:escape
 
+# Bell off
+xset -b
 
 source /usr/local/bin/virtualenvwrapper.sh
 
