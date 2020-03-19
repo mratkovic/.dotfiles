@@ -138,7 +138,4 @@ if [ -n "$DISPLAY" ]; then
 fi
 
 
-# Virtualenv wrapper
-source /usr/local/bin/virtualenvwrapper.sh
-
-
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -12,7 +12,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
@@ -21,7 +21,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 
 # font for window titles. ISO 10646 = Unicode
-# font pango: M+ 1m, FontAwesome, Ionicons, 10
+font pango: M+ 1m, FontAwesome, Ionicons, 12
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -42,7 +42,7 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+space exec --no-startup-id j4-dmenu-desktop
 #bindsym $mod+space exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i"
 #bindsym $mod+space exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu -hide-scrollbar'
-bindsym $mod+space exec --no-startup-id "rofi -combi-modi window,drun -show combi -modi combi"
+bindsym $mod+space exec --no-startup-id "rofi -yoffset -220 -combi-modi window,drun -show combi -modi combi"
 
 
 # change focus - VIM

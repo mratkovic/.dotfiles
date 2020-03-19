@@ -1,5 +1,5 @@
 [Configuration]
-FontName=DejaVu Sans Mono 9
+FontName=DejaVu Sans Mono 11
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBordersDefault=TRUE
@@ -23,4 +23,14 @@ ColorForeground=#838394949696
 ColorBackground=#00002b2b3636
 ColorCursor=#93a1a1
 ColorPalette=#00002b2b3636;#dcdc32322f2f;#580263680e3f;#b5b589890000;#5727b177f089;#6c6c7171c4c4;#2a2aa1a19898;#eeeee8e8d5d5;#65657b7b8383;#dcdc32322f2f;#858599990000;#b5b589890000;#66fda756d492;#6c6c7171c4c4;#858599990000;#fdfdf6f6e3e3
+MiscBellUrgent=FALSE
+MiscMouseWheelZoom=TRUE
+MiscMiddleClickOpensUri=FALSE
+MiscCopyOnSelect=FALSE
+MiscShowRelaunchDialog=TRUE
+MiscRewrapOnResize=TRUE
+MiscUseShiftArrowsToScroll=FALSE
+MiscSlimTabs=FALSE
+MiscNewTabAdjacent=FALSE
+ColorCursorUseDefault=FALSE
 

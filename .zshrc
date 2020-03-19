@@ -3,8 +3,6 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-
-
 # History options
 HISTSIZE=10000000                   # The maximum number of events to save in the internal history.
 SAVEHIST=10000000                   # The maximum number of events to save in the history file.
@@ -37,5 +35,5 @@ setxkbmap -option caps:escape
 # Bell off
 xset -b
 
-source /usr/local/bin/virtualenvwrapper.sh
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
