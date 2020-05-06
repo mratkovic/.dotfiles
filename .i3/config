@@ -288,9 +288,6 @@ mode "backlight (Up/Down)" {
 bindsym $mod+Control+b mode "backlight (Up/Down)"
 
 
-
-
-
 # title colors
 # class                 border  backgr. text    indicator
 client.focused          #203142 #203142 #ffffff #2e9ef4
@@ -395,13 +392,18 @@ exec --no-startup-id  gnome-settings-daemon
 exec dropbox start
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id compton -CGb --backend glx --vsync opengl
-#exec --no-startup-id redshift
+
+# exec --no-startup-id redshift
 exec --no-startup-id redshift-gtk
+
 # bell off
 exec --no-startup-id xset -b
-#exec --no-startup-id clipit
-#exec --no-startup-id redshift-gtk
-# Set wallpapaper - feh or tool called nitrogen
-#exec --no-startup-id nitrogen --restore
-exec --no-startup-id feh --bg-scale /home/marko/Pictures/wall/ele_w_1920.jp --bg-scale /home/marko/Pictures/wall/ele_w_1920.jpg
 
+# touch gestures
+exec --no-startup-id fusuma -c /home/marko/.config/fusuma/config.yaml
+
+# exec --no-startup-id clipit
+
+# Set wallpapaper - feh or tool called nitrogen
+# exec --no-startup-id nitrogen --restore
+# exec --no-startup-id feh --bg-scale /home/marko/pictures/wall/peak-1920x1080.jpg --bg-scale /home/marko/pictures/wall/peak-1920x1080.jpg
