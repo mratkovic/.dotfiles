@@ -37,3 +37,16 @@ xset -b
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+sd() {
+  fasd_selected=`fasd -d -l -t $1 \
+    | fzf --query="$1 " \
+          --select-1    \
+          --exit-0      \
+          --height=25%  \
+          --reverse     \
+          --tac         \
+          --no-sort     \
+          --cycle`
+  cd $fasd_selected
+}

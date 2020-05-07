@@ -21,6 +21,8 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
+  'autosuggestions' \
+  'fasd' \
   'git' \
   'syntax-highlighting' \
   'history-substring-search' \
